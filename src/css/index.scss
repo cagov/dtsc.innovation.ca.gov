@@ -1,0 +1,121 @@
+@import './_theme-tokens'; /* theme colors */
+
+/* sitewide styles */
+@import '../../node_modules/@cagov/ds-base-css/src/core';
+
+/* COMPONENTS/BLOCKS */
+@import '../../node_modules/@cagov/ds-site-header/src/index.scss';
+
+
+/* NAVIGATION ELEMENTS */
+@import '../../node_modules/@cagov/ds-statewide-header/src/index.scss';
+@import '../../node_modules/@cagov/ds-site-footer/src/index.scss';
+@import '../../node_modules/@cagov/ds-statewide-footer/src/index.scss';
+@import '../../node_modules/@cagov/ds-site-navigation/src/index.scss';
+
+.official-header {
+  background-color: var(--primary-dark-color,#046B99);
+  color: #fff;
+}
+
+.official-header svg .gov {
+  fill: #fff;
+}
+
+main {
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+}
+.mobile-switch-grid {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr), minmax(200px, 1fr);;
+  grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.top-left {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.bottom-left {
+  grid-column-start: 1;
+  grid-column-end: 2;  
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.middle-right {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+@media (max-width: 900px) {
+  .mobile-switch-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .top-left {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .middle-right {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .bottom-left {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }  
+}
+
+.program-details {
+  background-color: var(--primary-light-color,#E1F2F7);
+  margin: 2rem -1rem;
+  padding: 1rem;
+}
+
+.program-identifier {
+  background-color: var(--primary-light-color,#E1F2F7);
+  text-transform: uppercase;
+  padding: .7rem;
+}
+
+.icon-left {
+  display: flex;
+
+  .icon-container {
+    align-self: flex-start;
+    margin: 0.3rem 1rem 0 0.3rem;
+    background: var(--primary-light-color,#e1f2f7);
+    border-radius: 50%;
+    position: relative;
+    min-width: 30px;
+    min-height: 30px;
+  }
+  .icon-item {
+    position: absolute;
+    top: 7px;
+    left: 9px;
+  }
+}
+
+.other-ways .icon-left svg path {
+  fill: #046B99;
+}
+
+#map {
+  margin-left: 5rem;
+  width: 350px;
+  height: 500px;
+  border: solid 1px;
+  overflow: hidden;
+}
+
