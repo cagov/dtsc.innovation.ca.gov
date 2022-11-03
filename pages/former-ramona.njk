@@ -57,7 +57,7 @@ locale: en
         <path d="M24.0002 27.9999H4.00012V7.99976H10.0001V4H4.00012C2.93913 4 1.9218 4.42132 1.17153 5.17153C0.421253 5.92173 0 6.93913 0 7.99976V27.9999C0 29.0609 0.421324 30.0782 1.17153 30.8285C1.92173 31.5787 2.93913 32 4.00012 32H24.0002C25.0609 32 26.0782 31.5787 26.8285 30.8285C27.5787 30.0783 28 29.0609 28 27.9999V21.9999H24.0002V27.9999Z" fill="black"/>
       </svg>
 
-      <h2>Comment now</h2>
+      <h3>Comment now</h3>
       </div>
 
       <p>Comments are due December 16, 2022.</p>
@@ -89,7 +89,9 @@ locale: en
         <label for="receipt">DTSC responds to all public comments. How would you like to get our response?</label>
     
         <span class="small-marg">
-          <input type="radio" id="contact-method-email" value="Email">Email (paperless)
+          <span class="radio-container">
+            <input type="radio" id="contact-method-email" value="Email">Email (paperless)
+          </span>
           <div class="email-field d-none m-l-2">
             <label for="email-address">Provide your email address</label>
             <input type="text" id="email-address">
@@ -97,7 +99,9 @@ locale: en
           </div>
         </span>
         <span>
-          <input type="radio" id="contact-method-post" value="Postal mail">Postal mail
+          <span class="radio-container">
+            <input type="radio" id="contact-method-post" value="Postal mail">Postal mail
+          </span>
           <div class="postal-mail-field d-none m-l-2">
             <label for="post-address">Provide your mailing address</label>
             <input type="text" id="post-address">
@@ -108,16 +112,14 @@ locale: en
 
         <button class="button" type="submit">Submit your comment</button>
         <div class="form-error full-form-field">We need some more information before you can submit your comment. Review your information before submitting again.</div>
-
-        <div class="form-success d-none"></div>
-
-        <p class="mini">The California Office of Data &amp; Innovation does not sell or store information submitted through the form. We only share this information with DTSC.</p>
-
       </form>
+      <div class="form-success d-none">Thank you for submitting your comment!</div>
+
+      <p class="mini m-t-2">The California Office of Data &amp; Innovation does not sell or store information submitted through the form. We only share this information with DTSC.</p>
     </div>
   </div>
   <div class="other-ways bottom-left">
-    <h2>Other ways to comment on the plan by December 16, 2022:</h2>
+    <h3>Other ways to comment on the plan by December 16, 2022:</h3>
     <div class="icon-left">
       <span class="icon-container">      
         <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">

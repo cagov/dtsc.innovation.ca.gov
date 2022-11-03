@@ -4,7 +4,15 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-var marker = L.marker([34.1123495573206, -117.31944347283586]).addTo(map);
+this.regIcon = new L.Icon({
+  iconUrl: 'https://abortion.ca.gov/images/marker-icon-2x.png',
+  shadowUrl: 'https://abortion.ca.gov/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+let marker = L.marker([34.1123495573206, -117.31944347283586],{icon:this.regIcon, keyboard:false,riseOnHover:true,highlight: 'temporary'}).addTo(map);
 
 
 /* display different address options: email vs post - based on radio toggles */
@@ -25,16 +33,27 @@ document.querySelector('#contact-method-post').addEventListener('click',function
 })
 
 /* form validation */
+// only do validation after they clicked submit once
+let allowValidation = false;
 let commentForm = document.getElementById('comment-form');
 document.getElementById('comment-form').addEventListener('submit', function(event) {
   event.preventDefault();
+  allowValidation = true;
 
-  runFormValidationLogic();
+  let isFormValid = runFormValidationLogic();
+  if(isFormValid) {
+    document.querySelector('.form-success').classList.remove('d-none');
+    document.querySelector('form').style.display = 'none'
+  }
 
 })
 
 
 function runFormValidationLogic() {
+  // skip validation if they didn't click submit yet
+  if(!allowValidation) {
+    return true;
+  }
   // reset all errors to disp none
   commentForm.querySelectorAll('.form-error').forEach(el => {
     el.style.display = 'none';
@@ -81,6 +100,7 @@ function runFormValidationLogic() {
   if(!formValid) {
     commentForm.querySelector('.form-error.full-form-field').style.display = 'block';
   }
+  return formValid;
 }
 
 // revalidate on field changes

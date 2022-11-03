@@ -85,6 +85,8 @@ main {
 
   .radio-container {
     margin-top: 0;
+    display: flex;
+    align-items: center;
   }
   input {
     margin-right: 1rem;
@@ -95,12 +97,17 @@ main {
     justify-content: space-between;
     width: 90%;
   }
+  input[type="radio"] {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
   .small-marg {
     margin-top: 0.5rem;
   }
 
   .form-error {
     display: none;
+    font-size: .875rem;
   
     margin-top: .5rem;
     background-color: #FCE9E8;
@@ -114,6 +121,19 @@ main {
   
 }
 
+.form-success {
+  background-color: #E5F1E7;
+  background-image: url(/img/checkmark.svg);
+  background-repeat: no-repeat;
+  background-position: 0.7rem 1rem;
+  padding: 0.5rem;
+  text-indent: 2rem;
+}
+
+/* fixes some blurry background on map markers */
+.leaflet-container .leaflet-shadow-pane img, .leaflet-container .leaflet-marker-pane img {
+  background: transparent;
+}
 
 /* icons next to text */
 .icon-left {
@@ -186,5 +206,17 @@ main {
 @media (max-width: 900px) {
   .program-map {
     margin-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .program-map {
+    max-width: 100%;
+  }
+  .program-map #map {
+    height: 350px;
+  }
+  .program-map #map, button, .button {
+    width: 100%;
   }
 }
