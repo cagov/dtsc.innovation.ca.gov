@@ -1,9 +1,9 @@
-name: Deploy PROD innovation.ca.gov
-# site:  development.innovation.ca.gov
+name: Deploy PROD dtsc comment sites
+# site:  dtsc.innovation.ca.gov
 on:
   push:
     branches:
-      - main
+      - v1
 
 jobs:
   build_deploy:
