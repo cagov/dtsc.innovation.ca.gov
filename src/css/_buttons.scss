@@ -1,0 +1,23 @@
+/* buttons */
+button, .button {
+  background-color: #046B99;
+  color: white;
+  padding: 0.5rem 1rem;;
+  border-radius: 0.3rem;
+  display: inline-block;
+  border: none;
+  text-decoration: none;
+}
+.button:hover {
+  background-color: #046B99;
+  color: white;
+}
+.button.blank {
+  background-color: transparent;
+  color: #046B99;
+  border: 1px solid #046B99;
+}
+.button.blank:hover {
+  background-color: #046B99;
+  color: white;
+}

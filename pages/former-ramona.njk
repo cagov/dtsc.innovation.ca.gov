@@ -10,7 +10,9 @@ locale: en
     <span class="program-identifier">Cleanup program summary</span>
     <h1>Former Ramona Elementary School</h1>
   </div>
-  <div class="program-map middle-right" id="map"></div>
+  <div class="program-map middle-right">
+    <div id="map"></div>
+  </div>
   <div class="program-description-content bottom-left">
     <p>The Department of Toxic Substances Control (DTSC) wants your comments about a proposed cleanup plan at the former Ramona Elementary School. The former school site is at 1524 West 7th Street, San Bernardino, CA 92411.</p>
 
@@ -25,27 +27,91 @@ locale: en
 
     <p>DTSC proposes:</p>
     <ul>
-    <li>Burying contaminated debris and soil</li>
     <li>Removing contaminated soil from the site</li>
-    <li>Covering backfill with asphalt or concrete</li>
-    <li>Restricting what can be built on this site after cleanup</li>
     </ul>
+
+    <a href="#comment-form" class="button mobile-only">Submit a comment now</a>
   </div>
 </div>
 
-<div class="program-details mobile-switch-grid">
+<div class="program-details mobile-switch-grid equal-columns">
   <div class="how-to top-left">
     <h2>How to comment on the plan</h2>
     <p>Community feedback is an important part of DTSC’s work. We take all feedback into consideration before we make a final plan.</p>
     <h3>To inform your response, please read:</h3>
     <ul>
-      <li>The draft cleanup plan. It has details about what will happen at the site.</li>
-      <li>The community profile. It has more information about DTSC, the project, and how we're getting feedback from the community.</li>
+      <li>The <a href="https://www.envirostor.dtsc.ca.gov/public/view_document.asp?docurl=/public/community_involvement/3002184808/Feasibility%20Study%20and%20Remedial%20Action%20Plan%20Casa%20Ramona%20dated%20October%2025%202022%2Epdf">draft cleanup plan</a>. It has details about what will happen at the site.</li>
+      <li>The <a href="https://www.envirostor.dtsc.ca.gov/public/final_documents2?global_id=60003149&doc_id=60517200">community profile</a>. It has more information about DTSC, the project, and how we're getting feedback from the community.</li>
     </ul>
-    <p>Find all documents related to the former Ramona Elementary School site on EnviroStor. Select the Site/Facility Docs tab. You may need to scroll right to see it.</p>
+    <p>Find all documents related to the former Ramona Elementary School site on <a href="https://www.envirostor.dtsc.ca.gov/public/profile_report?global_id=60003149">EnviroStor</a>. Select the Site/Facility Docs tab. You may need to scroll right to see it.</p>
   </div>
-  <div class="comment-form middle-right" style="border: solid 1px; background: #fff; min-width: 520px;">
-    This is where the form goes
+  <div class="middle-right">
+    <div class="comment-form">
+    
+      <div class="icon-heading">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24.0005 0H23.1704L10.9301 12.2399C9.04737 14.1121 7.99236 16.6598 8.00004 19.315V24H12.6852C15.3387 24.0066 17.8843 22.9516 19.7552 21.07L32 8.83009V8.00003C32 5.87846 31.1574 3.84377 29.6569 2.34344C28.1565 0.843027 26.1217 0.00045503 24.0002 0.00045503L24.0005 0ZM16.93 18.2398C15.8073 19.3701 14.2787 20.0039 12.6851 19.9997H12.0001V19.3147C11.9945 17.7219 12.6265 16.1933 13.7551 15.0699L24.7552 4.07011V4.06976C25.5399 4.22112 26.2612 4.60407 26.8262 5.16902C27.3912 5.73402 27.7738 6.45525 27.9252 7.2396L16.93 18.2398Z" fill="black"/>
+        <path d="M24.0002 27.9999H4.00012V7.99976H10.0001V4H4.00012C2.93913 4 1.9218 4.42132 1.17153 5.17153C0.421253 5.92173 0 6.93913 0 7.99976V27.9999C0 29.0609 0.421324 30.0782 1.17153 30.8285C1.92173 31.5787 2.93913 32 4.00012 32H24.0002C25.0609 32 26.0782 31.5787 26.8285 30.8285C27.5787 30.0783 28 29.0609 28 27.9999V21.9999H24.0002V27.9999Z" fill="black"/>
+      </svg>
+
+      <h2>Comment now</h2>
+      </div>
+
+      <p>Comments are due December 16, 2022.</p>
+      <p>Your comment can cover as many topics as you want. There is no character limit. Please submit only one comment.</p>
+
+      <form method="post" class="stack" action="#" id="comment-form">
+        <label for="commentor-name">Name</label>
+        <input type="text" id="commentor-name">
+        <div class="form-error commentor-name-field">Enter your name</div>
+
+        <label for="satisfaction">Are you satisfied with this proposal?</label>
+        <div class="radios-list small-marg">
+          <span class="radio-container">
+            <input type="radio" name="satisfaction" id="sat-yes" value="Yes">Yes
+          </span>
+          <span class="radio-container">
+            <input type="radio" name="satisfaction" id="sat-no" value="No">No
+          </span>
+          <span class="radio-container">
+            <input type="radio" name="satisfaction" id="sat-not-sure" value="not sure">I'm not sure
+          </span>
+        </div>
+        <div class="form-error satisfaction-field">Choose one option</div>
+
+        <label for="comments">Comment(s)</label>
+        <textarea id="comments"></textarea>
+        <div class="form-error comments-field">Enter a comment</div>
+
+        <label for="receipt">DTSC responds to all public comments. How would you like to get our response?</label>
+    
+        <span class="small-marg">
+          <input type="radio" id="contact-method-email" value="Email">Email (paperless)
+          <div class="email-field d-none m-l-2">
+            <label for="email-address">Provide your email address</label>
+            <input type="text" id="email-address">
+            <div class="form-error email-address-field">That doesn’t look like an email address. Make sure it has an @ and a period before trying again</div>
+          </div>
+        </span>
+        <span>
+          <input type="radio" id="contact-method-post" value="Postal mail">Postal mail
+          <div class="postal-mail-field d-none m-l-2">
+            <label for="post-address">Provide your mailing address</label>
+            <input type="text" id="post-address">
+            <div class="form-error post-address-field">Enter your mailing address</div>
+          </div>
+        </span>
+        <div class="form-error contact-method-field">Choose a contact method</div>
+
+        <button class="button" type="submit">Submit your comment</button>
+        <div class="form-error full-form-field">We need some more information before you can submit your comment. Review your information before submitting again.</div>
+
+        <div class="form-success d-none"></div>
+
+        <p class="mini">The California Office of Data &amp; Innovation does not sell or store information submitted through the form. We only share this information with DTSC.</p>
+
+      </form>
+    </div>
   </div>
   <div class="other-ways bottom-left">
     <h2>Other ways to comment on the plan by December 16, 2022:</h2>
@@ -89,8 +155,8 @@ locale: en
       </span>
       <span>
         <p><strong>Attend the public meeting</strong></p>
-        <p>DTSC is hosting a community meeting on Zoom on December 7, 2020, from 6:00-8:00 pm.</p>
-        <p><button>Zoom link to join the meeting</button></p>
+        <p>DTSC is hosting a community meeting on Zoom on December 7, 2022, from 6:00-8:00 pm.</p>
+        <p><a class="button blank" href="https://us06web.zoom.us/j/87652770632" class="blank">Zoom link to join the meeting</button></p>
         <p>You can also call in by phone at 1-669-900-6833.</p>
         <p>The meeting ID is 876 5277 0632.</p>
       </span>
