@@ -37,9 +37,23 @@ main {
 }
 
 .program-identifier {
-  background-color: var(--primary-light-color,#E1F2F7);
+  background-color: #E5F1E7;
   text-transform: uppercase;
-  padding: .7rem;
+  padding: 0.7rem 1.5rem;
+  position: relative;
+  border-radius: 1.5rem;
+  display: inline-block;
+  text-indent: 1.5rem;
+
+  .emphasis-circle {
+    background-color: #0F6D38;
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 1.2rem;
+    left: 1rem;
+  }
 }
 
 /* form */
