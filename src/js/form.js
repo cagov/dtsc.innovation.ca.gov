@@ -26,6 +26,7 @@ document.getElementById('comment-form').addEventListener('submit', function(even
 
   let isFormValid = runFormValidationLogic();
   if(isFormValid) {
+    submitFormData('comment-form');
     document.querySelector('.form-success').classList.remove('d-none');
     document.querySelector('form').style.display = 'none'
   }
@@ -92,3 +93,24 @@ let fieldsToWatchForChange = ['commentor-name','comments','email-address','post-
 fieldsToWatchForChange.forEach(fieldToValidate => {
   document.getElementById(fieldToValidate).addEventListener('change',runFormValidationLogic);
 })
+
+function submitFormData(formId) {
+  myFormData = new FormData(document.getElementById(formId))
+  
+  async function postData(url = '') {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      redirect: 'follow',
+      body: JSON.stringify(Object.fromEntries(myFormData))
+    });
+    return response.json();
+  }
+  
+  postData('put url here')
+    .then((data) => {
+      console.log(data);
+    });
+}
