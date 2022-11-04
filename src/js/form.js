@@ -95,7 +95,8 @@ fieldsToWatchForChange.forEach(fieldToValidate => {
 })
 
 function submitFormData(formId) {
-  myFormData = new FormData(document.getElementById(formId))
+  let myFormData = new FormData(document.getElementById(formId))
+  console.log(myFormData)
   
   async function postData(url = '') {
     const response = await fetch(url, {
@@ -109,7 +110,7 @@ function submitFormData(formId) {
     return response.json();
   }
   
-  postData('put url here')
+  postData('https://dphyqrmwyb.execute-api.us-west-1.amazonaws.com/Prod/send')
     .then((data) => {
       console.log(data);
     });
