@@ -66,7 +66,7 @@ locale: en
       <form method="post" class="stack" action="#" id="comment-form">
         <input type="hidden" name="comment-form-name" value="former-ramona" />
         <label for="commentor-name">Name</label>
-        <input type="text" id="commentor-name">
+        <input type="text" id="commentor-name" name="commentor-name">
         <div class="form-error commentor-name-field">Enter your name</div>
 
         <label for="satisfaction">Are you satisfied with this proposal?</label>
@@ -84,28 +84,28 @@ locale: en
         <div class="form-error satisfaction-field">Choose one option</div>
 
         <label for="comments">Comment(s)</label>
-        <textarea id="comments"></textarea>
+        <textarea id="comments" name="comments"></textarea>
         <div class="form-error comments-field">Enter a comment</div>
 
         <label for="receipt">DTSC responds to all public comments. How would you like to get our response?</label>
     
         <span class="small-marg">
           <span class="radio-container">
-            <input type="radio" id="contact-method-email" value="Email">Email (paperless)
+            <input type="radio" id="contact-method-email" name="contact-method-email" value="Email">Email (paperless)
           </span>
           <div class="email-field d-none m-l-2">
             <label for="email-address">Provide your email address</label>
-            <input type="text" id="email-address">
+            <input type="text" id="email-address" name="email-address">
             <div class="form-error email-address-field">That doesn’t look like an email address. Make sure it has an @ and a period before trying again</div>
           </div>
         </span>
         <span>
           <span class="radio-container">
-            <input type="radio" id="contact-method-post" value="Postal mail">Postal mail
+            <input type="radio" id="contact-method-post" name="contact-method-post" value="Postal mail">Postal mail
           </span>
           <div class="postal-mail-field d-none m-l-2">
             <label for="post-address">Provide your mailing address</label>
-            <input type="text" id="post-address">
+            <input type="text" id="post-address" name="post-address">
             <div class="form-error post-address-field">Enter your mailing address</div>
           </div>
         </span>
