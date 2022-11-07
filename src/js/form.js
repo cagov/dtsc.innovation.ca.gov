@@ -110,7 +110,10 @@ function submitFormData(formId) {
     return response.json();
   }
   
-  postData('https://79b80gy750.execute-api.us-west-1.amazonaws.com/respond')
+  // v2 api
+  let dest = 'https://54h61g2cfg.execute-api.us-west-1.amazonaws.com/send';
+
+  postData(dest)
     .then((data) => {
       console.log(data);
     });
