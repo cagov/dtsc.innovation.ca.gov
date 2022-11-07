@@ -27,6 +27,15 @@ main {
   margin-right: 1rem;
 }
 
+h1 {
+  margin-top: calc(var(--s-3) + var(--ratio)); 
+  margin-bottom: calc(var(--s-2) + var(--ratio));
+}
+h3 {
+  margin-top: calc(var(--s-2) + var(--ratio));
+  margin-bottom: calc(var(--s-2) + var(--ratio));
+}
+
 @import './mobile-switch-order-grid';
 @import './_buttons.scss';
 
@@ -116,7 +125,7 @@ main {
     text-indent: 2rem;
     background-image: url(/img/error.svg);
     background-repeat: no-repeat;
-    background-position: 0.7rem 0.7rem;
+    background-position: 0.5rem 0.5rem;
   }
   
 }
@@ -155,6 +164,9 @@ main {
   }
 }
 
+.mb-0 {
+  margin-bottom: 0;
+}
 .mobile-only {
   display: none;
 }
@@ -216,7 +228,7 @@ main {
   .program-map #map {
     height: 350px;
   }
-  .program-map #map, button, .button {
+  .program-map #map {
     width: 100%;
   }
 }

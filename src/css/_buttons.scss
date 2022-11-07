@@ -21,3 +21,10 @@ button, .button {
   background-color: #046B99;
   color: white;
 }
+
+@media (max-width: 600px) {
+  button, .button {
+    width: 100%;
+    text-align: center;
+  }
+}
