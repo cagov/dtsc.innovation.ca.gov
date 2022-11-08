@@ -79,6 +79,8 @@ function runFormValidationLogic() {
   // a contact method must be chosen
   if(!document.querySelector('#contact-method-email').checked && !document.querySelector('#contact-method-post').checked) {
     commentForm.querySelector(`.form-error.contact-method-field`).style.display = 'block';
+    commentForm.querySelector(`.form-error.contact-method-field`).style.display = 'block';
+    formValid = false;
   }
 
   // if any of those fail display general error under submit button
