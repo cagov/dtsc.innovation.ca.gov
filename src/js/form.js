@@ -57,7 +57,7 @@ function runFormValidationLogic() {
   if(document.querySelector('#contact-method-email').checked) {
     fieldsThatCannotBeBlank.push('email-address');
     let emailAddressField = document.getElementById('email-address');
-    if(emailAddressField.value.indexOf('@') < 0 || emailAddressField.value.indexOf('.') < emailAddressField.value.indexOf('@')) {
+    if(emailAddressField.value.indexOf('@') < 0 || emailAddressField.value.indexOf('.') < 0) {
       commentForm.querySelector(`.form-error.email-address-field`).style.display = 'block';
       emailAddressField.setAttribute('aria-invalid','true');
       formValid = false;
@@ -96,8 +96,7 @@ fieldsToWatchForChange.forEach(fieldToValidate => {
 
 function submitFormData(formId) {
   let myFormData = new FormData(document.getElementById(formId))
-  console.log(myFormData)
-  
+
   async function postData(url = '') {
     const response = await fetch(url, {
       method: 'POST',
