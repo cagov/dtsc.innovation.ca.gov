@@ -1,0 +1,77 @@
+/* form */
+.comment-form {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+.comment-form .stack > * + * {
+  display: block;
+}
+
+.comment-form {
+  input[type=text], textarea {
+    border: solid 1px;
+    width: 90%;
+    line-height: 3rem;
+    border-radius: .3rem;
+    margin-top: .5rem;
+  }
+  textarea {
+    height: 9rem;
+  }
+}
+
+.comment-form {
+
+  .radio-container {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+  }
+  input {
+    margin-right: 1rem;
+  }
+  textarea {
+    line-height: 1.75rem;
+    padding: 0 0.3rem;
+  }
+  .radios-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+  }
+  input[type="radio"] {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+  .small-marg {
+    margin-top: 0.5rem;
+  }
+
+  .form-error {
+    display: none;
+    font-size: .875rem;
+  
+    margin-top: .5rem;
+    background-color: #FCE9E8;
+    color: #93182B;
+    padding: .3rem;
+    text-indent: 2rem;
+    background-image: url(/img/error.svg);
+    background-repeat: no-repeat;
+    background-position: 0.5rem 0.5rem;
+  }
+  
+}
+
+.form-success {
+  background-color: #E5F1E7;
+  background-image: url(/img/checkmark.svg);
+  background-repeat: no-repeat;
+  background-position: 0.7rem 1rem;
+  padding: 0.5rem;
+  text-indent: 2rem;
+}
