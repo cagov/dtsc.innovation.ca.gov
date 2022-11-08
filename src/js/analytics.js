@@ -1,3 +1,4 @@
+//GA setup
 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-20973992-35', 'auto'); // my specific site
 ga('create', 'UA-3419582-2', 'auto', 'tracker2'); // all ca.gov
@@ -11,8 +12,28 @@ window.onload = function() {
   document.head.append(s);
 }
 
+// GA event tracking
+// track links
+document.querySelectorAll('a').forEach((a) => {
+  a.addEventListener('click',function() {
+    reportGA('offsite', this.href)
+  })          
+});
 
-// meta pixel code
+
+function reportGA(eventAction, eventLabel, eventCategory = 'click') {
+  if(typeof(ga) !== 'undefined') {
+    ga('send', 'event', eventCategory, eventAction, eventLabel);
+    ga('tracker2.send', 'event', eventCategory, eventAction, eventLabel);
+  } else {
+    setTimeout(function() {
+      reportGA(eventAction, eventLabel, eventCategory);
+    }, 500);
+  }
+}
+
+
+// meta pixel library loader
 
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
