@@ -117,15 +117,22 @@ function submitFormData(formId) {
     return response.json();
   }
   
-  // v2 api staging
-  let dest = 'https://54h61g2cfg.execute-api.us-west-1.amazonaws.com/send';
-  // production 
-  dest = 'https://qsyydsg8b0.execute-api.us-west-1.amazonaws.com/send';
+  // production
+  let dest = 'https://qsyydsg8b0.execute-api.us-west-1.amazonaws.com/send';
+  if(window.location.host.indexOf('localhost') === 0) {
+    // staging
+    console.log('submitting to staging')
+    dest = 'https://54h61g2cfg.execute-api.us-west-1.amazonaws.com/send';
+  }
 
   postData(dest)
     .then((data) => {
       console.log(data);
     });
 
-  window.reportGA('comment-form','submitted','form')
+  window.reportGA('comment-form','submitted','form');
+
+  // track form submissions and facebook contact event conversions
+  if(typeof(fbq) !== 'undefined') { fbq('track', 'Contact', {}); }
+
 }
