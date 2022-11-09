@@ -16,18 +16,18 @@ window.onload = function() {
 // track links
 document.querySelectorAll('a').forEach((a) => {
   a.addEventListener('click',function() {
-    reportGA('offsite', this.href)
+    window.reportGA('offsite', this.href)
   })          
 });
 
 
-function reportGA(eventAction, eventLabel, eventCategory = 'click') {
+window.reportGA = function(eventAction, eventLabel, eventCategory = 'click') {
   if(typeof(ga) !== 'undefined') {
     ga('send', 'event', eventCategory, eventAction, eventLabel);
     ga('tracker2.send', 'event', eventCategory, eventAction, eventLabel);
   } else {
     setTimeout(function() {
-      reportGA(eventAction, eventLabel, eventCategory);
+      window.reportGA(eventAction, eventLabel, eventCategory);
     }, 500);
   }
 }

@@ -51,6 +51,8 @@ function runFormValidationLogic() {
   // a rating must be chosen
   if(!document.querySelector('#sat-yes').checked && !document.querySelector('#sat-no').checked && !document.querySelector('#sat-not-sure').checked) {
     commentForm.querySelector(`.form-error.satisfaction-field`).style.display = 'block';
+  } else {
+    window.reportGA('satisfaction-field','touched','form')
   }
 
   // if email radio selected email must match regex
@@ -73,6 +75,8 @@ function runFormValidationLogic() {
       commentForm.querySelector(`.form-error.${fieldName}-field`).style.display = 'block';
       document.getElementById(fieldName).setAttribute('aria-invalid','true');
       formValid = false;
+    } else {
+      window.reportGA(fieldName,'touched','form')
     }
   })
 
@@ -81,6 +85,8 @@ function runFormValidationLogic() {
     commentForm.querySelector(`.form-error.contact-method-field`).style.display = 'block';
     commentForm.querySelector(`.form-error.contact-method-field`).style.display = 'block';
     formValid = false;
+  } else {
+    window.reportGA('contact-method','touched','form')
   }
 
   // if any of those fail display general error under submit button
@@ -120,4 +126,6 @@ function submitFormData(formId) {
     .then((data) => {
       console.log(data);
     });
+
+  window.reportGA('comment-form','submitted','form')
 }
