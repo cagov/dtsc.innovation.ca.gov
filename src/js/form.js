@@ -111,8 +111,10 @@ function submitFormData(formId) {
     return response.json();
   }
   
-  // v2 api
+  // v2 api staging
   let dest = 'https://54h61g2cfg.execute-api.us-west-1.amazonaws.com/send';
+  // production 
+  dest = 'https://qsyydsg8b0.execute-api.us-west-1.amazonaws.com/send';
 
   postData(dest)
     .then((data) => {
