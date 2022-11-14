@@ -1,0 +1,169 @@
+@import './_theme-tokens'; /* theme colors */
+
+/* sitewide styles */
+@import '../../node_modules/@cagov/ds-base-css/src/core';
+
+/* COMPONENTS/BLOCKS */
+@import '../../node_modules/@cagov/ds-site-header/src/index.scss';
+
+
+/* NAVIGATION ELEMENTS */
+@import '../../node_modules/@cagov/ds-statewide-header/src/index.scss';
+@import '../../node_modules/@cagov/ds-site-footer/src/index.scss';
+@import '../../node_modules/@cagov/ds-statewide-footer/src/index.scss';
+@import '../../node_modules/@cagov/ds-site-navigation/src/index.scss';
+
+@import './lang-switcher';
+
+.official-header {
+  background-color: var(--primary-dark-color,#046B99);
+  color: #fff;
+}
+
+.official-header svg .gov {
+  fill: #fff;
+}
+
+main {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+h1 {
+  margin-top: calc(var(--s-3) + var(--ratio)); 
+  margin-bottom: calc(var(--s-2) + var(--ratio));
+}
+h3 {
+  margin-top: calc(var(--s-2) + var(--ratio));
+  margin-bottom: calc(var(--s-2) + var(--ratio));
+}
+
+@import './mobile-switch-order-grid';
+@import './_buttons.scss';
+
+.program-details {
+  background-color: var(--primary-light-color,#E1F2F7);
+  margin: 2rem -1rem;
+  padding: 1rem;
+}
+
+.program-identifier {
+  background-color: #E5F1E7;
+  text-transform: uppercase;
+  padding: 0.7rem 1.5rem;
+  position: relative;
+  border-radius: 1.5rem;
+  display: inline-block;
+  text-indent: 1.5rem;
+
+  .emphasis-circle {
+    background-color: #0F6D38;
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 1.2rem;
+    left: 1rem;
+  }
+}
+
+@import './form';
+
+/* fixes some blurry background on map markers */
+.leaflet-container .leaflet-shadow-pane img, .leaflet-container .leaflet-marker-pane img {
+  background: transparent;
+}
+
+/* icons next to text */
+.icon-left {
+  display: flex;
+
+  .icon-container {
+    align-self: flex-start;
+    margin: 0.3rem 1rem 0 0.3rem;
+    background: var(--primary-light-color,#e1f2f7);
+    border-radius: 50%;
+    position: relative;
+    min-width: 30px;
+    min-height: 30px;
+  }
+  .icon-item {
+    position: absolute;
+    top: 7px;
+    left: 9px;
+  }
+}
+
+
+
+.other-ways .icon-left svg path {
+  fill: #046B99;
+}
+
+.icon-heading {
+  display: flex; 
+  align-items: center;
+  margin-top: 0;
+
+  h2 {
+    margin-top: 1rem;
+  }
+
+  svg {
+    margin-right: 1rem; 
+    margin-top: -6px;
+  }
+}
+
+/* utility classes */
+.m-l-2 {
+  margin-left: 2rem;
+}
+.mini {
+  font-size: .875rem;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.mobile-only {
+  display: none;
+}
+@media (max-width: 900px) {
+  .mobile-only {
+    display: inline-block;
+  }
+  .comment-form {
+    margin-top: 1rem;
+  }
+}
+
+/* map alignment */
+.program-map {
+  margin-left: 5rem;
+  border-radius: 0.3rem;
+  overflow: hidden;
+  max-width: 90%;
+
+  #map {
+    width: 350px;
+    height: 500px;  
+  }
+}
+
+@media (max-width: 900px) {
+  .program-map {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .program-map {
+    max-width: 100%;
+  }
+  .program-map #map {
+    height: 350px;
+  }
+  .program-map #map {
+    width: 100%;
+  }
+}
