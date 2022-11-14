@@ -118,12 +118,7 @@ function submitFormData(formId) {
   }
   
   // production
-  let dest = 'https://qsyydsg8b0.execute-api.us-west-1.amazonaws.com/send';
-  if(window.location.host.indexOf('localhost') === 0) {
-    // staging
-    console.log('submitting to staging')
-    dest = 'https://54h61g2cfg.execute-api.us-west-1.amazonaws.com/send';
-  }
+  let dest = document.getElementById('form-destination');
 
   postData(dest)
     .then((data) => {
