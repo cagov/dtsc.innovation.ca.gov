@@ -29,6 +29,8 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy({ "src/img": "img" });
+  eleventyConfig.addPassthroughCopy({ "src/js/leaflet.js": "js/leaflet.js" });
+  eleventyConfig.addPassthroughCopy({ "src/css/leaflet.css": "css/leaflet.css" });
   eleventyConfig.addPassthroughCopy({ "src/css/fonts": "fonts" });
 
   eleventyConfig.addFilter("dateformat", function (dateString) {
