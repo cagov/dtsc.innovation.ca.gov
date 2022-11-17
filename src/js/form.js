@@ -118,8 +118,13 @@ function submitFormData(formId) {
   }
   
   // production
-  let dest = document.getElementById('form-destination');
+  let dest = document.getElementById('form-destination').value;
+  
 
+  // temp testing setup
+  dest = 'http://localhost:3333/send';
+
+  
   postData(dest)
     .then((data) => {
       console.log(data);
