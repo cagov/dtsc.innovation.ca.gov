@@ -118,12 +118,9 @@ function submitFormData(formId) {
   }
   
   // production
-  let dest = document.getElementById('form-destination').value;
-  
-
-  // temp testing setup
-  dest = 'http://localhost:3333/send';
-
+  let dest = 'https://qsyydsg8b0.execute-api.us-west-1.amazonaws.com/send';
+  // staging
+  // dest = 'https://54h61g2cfg.execute-api.us-west-1.amazonaws.com/send';
   
   postData(dest)
     .then((data) => {
