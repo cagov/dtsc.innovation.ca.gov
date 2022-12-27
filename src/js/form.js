@@ -122,6 +122,11 @@ function submitFormData(formId) {
   // staging
   // dest = 'https://54h61g2cfg.execute-api.us-west-1.amazonaws.com/send';
   
+  // local testing: hit local sandbox api when running locally
+  if(window.location.origin == 'http://localhost:8080') {
+    dest = 'http://localhost:3333/send';
+  }
+
   postData(dest)
     .then((data) => {
       console.log(data);
