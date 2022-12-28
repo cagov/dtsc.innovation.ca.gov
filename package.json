@@ -1,6 +1,6 @@
 {
   "name": "dtsc.innovation.ca.gov",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "",
   "main": "_site/index.html",
   "engines" : { 
