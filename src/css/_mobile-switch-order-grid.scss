@@ -6,6 +6,7 @@
 }
 .mobile-switch-grid.equal-columns {
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-column-gap: 3rem;
   grid-row-gap: 0;
 }
